@@ -171,6 +171,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+scene.onOverlapTile(SpriteKind.Player, tiles.util.door0, function (sprite, location) {
+    tiles.loadMap(tiles.createMap(tilemap`level2`))
+    if (Math.percentChance(50)) {
+        tiles.placeOnTile(MIGAMII, tiles.getTileLocation(0, 0))
+        tiles.placeOnTile(aqua, tiles.getTileLocation(0, 0))
+        tiles.placeOnTile(darkness, tiles.getTileLocation(0, 0))
+    } else {
+        tiles.placeOnTile(MIGAMII, tiles.getTileLocation(0, 0))
+        tiles.placeOnTile(aqua, tiles.getTileLocation(0, 0))
+        tiles.placeOnTile(darkness, tiles.getTileLocation(0, 0))
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`sigh left1`, function (sprite, location) {
     tiles.createSpritesOnTiles(assets.tile`sigh left1`, SpriteKind.text_block)
     game.splash("black forest")
